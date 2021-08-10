@@ -19,6 +19,7 @@ render() {
     return (
             <div className="container-fluid">
                 <TitleBar />
+                <div className="row">
                 <div className="col-md-4">
                     {/**Button will be here for previous book */}
                 </div>
@@ -30,6 +31,8 @@ render() {
                 <div className="col-md-4">
                     {/**Button will be here for next book */}
                 </div>
+                </div>
+               
             </div>
         )
     }   
