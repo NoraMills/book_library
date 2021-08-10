@@ -17,7 +17,6 @@ class App extends Component {
 
 
     goToNextBook = () => {
-        debugger;
         let tempBookNumber = this.state.bookNumber;
         tempBookNumber++;
         if(tempBookNumber === this.books.length){
@@ -26,6 +25,17 @@ class App extends Component {
         this.setState({
             bookNumber: tempBookNumber
         });
+    }
+
+    goToPreviousBook = () => {
+        let tempBookNumber = this.state.bookNumber;
+        tempBookNumber--;
+        if(tempBookNumber < 0) {
+            tempBookNumber = this.books.length -1;
+        }
+        this.setState({
+            bookNumber: tempBookNumber
+        })
     }
     
 
@@ -36,6 +46,7 @@ class App extends Component {
                 <div className="row">
                     <div className="col-md-4">
                         {/**Button will be here for previous book */}
+                        <button onClick={this.goToPreviousBook}>Previous Book</button>
                     </div>
                     <div className="col-md-4">
                         {/**Book will be displayed with cover here */}
