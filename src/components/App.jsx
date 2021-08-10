@@ -9,8 +9,10 @@ class App extends Component {
             {title: "Nineteen Eighty-Four", author: "George Orwell"},
             {title: "Our Martyred Lady", author: "Gav Thorpe"},
             {title: "Simulacra and Simulation", author: "Jean Baudrillard"},
-        ]
-        this.state = {};
+        ];
+        this.state = {
+            bookNumber: 0
+        };
     }
 
 render() {
