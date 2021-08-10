@@ -15,27 +15,41 @@ class App extends Component {
         };
     }
 
-render() {
-    return (
+
+    goToNextBook = () => {
+        debugger;
+        let tempBookNumber = this.state.bookNumber;
+        tempBookNumber++;
+        if(tempBookNumber === this.books.length){
+            tempBookNumber = 0;
+        }
+        this.setState({
+            bookNumber: tempBookNumber
+        });
+    }
+    
+
+    render() {
+        return (
             <div className="container-fluid">
                 <TitleBar />
                 <div className="row">
-                <div className="col-md-4">
-                    {/**Button will be here for previous book */}
+                    <div className="col-md-4">
+                        {/**Button will be here for previous book */}
+                    </div>
+                    <div className="col-md-4">
+                        {/**Book will be displayed with cover here */}
+                        <h1>{this.books[this.state.bookNumber].title}</h1>
+                        <h4>{this.books[this.state.bookNumber].author}</h4>
+                    </div>
+                    <div className="col-md-4">
+                        {/**Button will be here for next book */}
+                        <button onClick={this.goToNextBook}>Next Book</button>
+                    </div>
                 </div>
-                <div className="col-md-4">
-                    {/**Book will be displayed with cover here */}
-                    <h1>{this.books[this.state.bookNumber].title}</h1>
-                    <h4>{this.books[this.state.bookNumber].author}</h4>
-                </div>
-                <div className="col-md-4">
-                    {/**Button will be here for next book */}
-                </div>
-                </div>
-               
+                
             </div>
         )
-    }   
+    }
 }
-
 export default App;
