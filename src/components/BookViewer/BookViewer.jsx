@@ -1,4 +1,6 @@
+import { prependToMemberExpression } from '@babel/types';
 import React from 'react';
+import Book from '../Book/Book';
 
 const BookViewer = (props) => {
     return (
@@ -9,8 +11,7 @@ const BookViewer = (props) => {
             </div>
             <div className="col-md-4">
                 {/**Book will be displayed with cover here */}
-                <h1>{props.book.title}</h1>
-                <h4>{props.book.author}</h4>
+                <Book book={props.book} />
             </div>
             <div className="col-md-4">
                 {/**Button will be here for next book */}
