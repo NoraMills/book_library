@@ -11,7 +11,7 @@ class App extends Component {
             {title: "Simulacra and Simulation", author: "Jean Baudrillard"},
         ];
         this.state = {
-            bookNumber: 0
+            bookNumber: 2
         };
     }
 
@@ -19,6 +19,17 @@ render() {
     return (
             <div className="container-fluid">
                 <TitleBar />
+                <div className="col-md-4">
+                    {/**Button will be here for previous book */}
+                </div>
+                <div className="col-md-4">
+                    {/**Book will be displayed with cover here */}
+                    <h1>{this.books[this.state.bookNumber].title}</h1>
+                    <h4>{this.books[this.state.bookNumber].author}</h4>
+                </div>
+                <div className="col-md-4">
+                    {/**Button will be here for next book */}
+                </div>
             </div>
         )
     }   
